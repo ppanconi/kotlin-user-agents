@@ -1,7 +1,6 @@
 package com.instal.ua.kotlin
 
-import junit.framework.Assert.assertFalse
-import junit.framework.Assert.assertTrue
+import org.junit.Assert.*
 import org.junit.Test
 
 
@@ -81,5 +80,145 @@ class UserAgentsTest {
         assertFalse(android_firefox_aurora_ua.is_tablet())
     }
 
+    @Test
+    fun test_is_mobile_property() {
+        assertTrue(iphone_ua.is_mobile())
+        assertTrue(galaxy_s3_ua.is_mobile())
+        assertTrue(blackberry_torch_ua.is_mobile())
+        assertTrue(blackberry_bold_ua.is_mobile())
+        assertTrue(windows_phone_ua.is_mobile())
+        assertTrue(j2me_opera_ua.is_mobile())
+        assertTrue(nokia_n97_ua.is_mobile())
+        assertFalse(windows_rt_ua.is_mobile())
+        assertFalse(ipad_ua.is_mobile())
+        assertFalse(playbook_ua.is_mobile())
+        assertFalse(kindle_fire_ua.is_mobile())
+        assertFalse(nexus_7_ua.is_mobile())
+        assertFalse(ie_ua.is_mobile())
+        assertFalse(ie_touch_ua.is_mobile())
+        assertFalse(mac_safari_ua.is_mobile())
+        assertFalse(windows_ie_ua.is_mobile())
+        assertFalse(ubuntu_firefox_ua.is_mobile())
+        assertFalse(google_bot_ua.is_mobile())
+        assertTrue(android_firefox_aurora_ua.is_mobile())
+    }
+
+    @Test
+    fun test_is_touch_property() {
+        assertTrue(iphone_ua.is_touch_capable())
+        assertTrue(galaxy_s3_ua.is_touch_capable())
+        assertTrue(ipad_ua.is_touch_capable())
+        assertTrue(playbook_ua.is_touch_capable())
+        assertTrue(kindle_fire_ua.is_touch_capable())
+        assertTrue(nexus_7_ua.is_touch_capable())
+        assertTrue(windows_phone_ua.is_touch_capable())
+        assertTrue(ie_touch_ua.is_touch_capable())
+        assertTrue(blackberry_bold_touch_ua.is_mobile())
+        assertTrue(blackberry_torch_ua.is_mobile())
+        assertFalse(j2me_opera_ua.is_touch_capable())
+        assertFalse(ie_ua.is_touch_capable())
+        assertFalse(blackberry_bold_ua.is_touch_capable())
+        assertFalse(mac_safari_ua.is_touch_capable())
+        assertFalse(windows_ie_ua.is_touch_capable())
+        assertFalse(ubuntu_firefox_ua.is_touch_capable())
+        assertFalse(google_bot_ua.is_touch_capable())
+        assertFalse(nokia_n97_ua.is_touch_capable())
+        assertTrue(android_firefox_aurora_ua.is_touch_capable())
+    }
+
+    @Test
+    fun test_is_pc() {
+        assertFalse(iphone_ua.is_pc())
+        assertFalse(galaxy_s3_ua.is_pc())
+        assertFalse(ipad_ua.is_pc())
+        assertFalse(playbook_ua.is_pc())
+        assertFalse(kindle_fire_ua.is_pc())
+        assertFalse(nexus_7_ua.is_pc())
+        assertFalse(windows_phone_ua.is_pc())
+        assertFalse(blackberry_bold_touch_ua.is_pc())
+        assertFalse(blackberry_torch_ua.is_pc())
+        assertFalse(blackberry_bold_ua.is_pc())
+        assertFalse(j2me_opera_ua.is_pc())
+        assertFalse(google_bot_ua.is_pc())
+        assertFalse(nokia_n97_ua.is_pc())
+        assertTrue(mac_safari_ua.is_pc())
+        assertTrue(windows_ie_ua.is_pc())
+        assertTrue(ubuntu_firefox_ua.is_pc())
+        assertTrue(ie_touch_ua.is_pc())
+        assertTrue(ie_ua.is_pc())
+        assertFalse(android_firefox_aurora_ua.is_pc())
+        assertTrue(chromebook_ua.is_pc())
+    }
+
+
+    @Test
+    fun test_is_bot() {
+        assertTrue(google_bot_ua.is_bot())
+        assertFalse(iphone_ua.is_bot())
+        assertFalse(galaxy_s3_ua.is_bot())
+        assertFalse(ipad_ua.is_bot())
+        assertFalse(playbook_ua.is_bot())
+        assertFalse(kindle_fire_ua.is_bot())
+        assertFalse(nexus_7_ua.is_bot())
+        assertFalse(windows_phone_ua.is_bot())
+        assertFalse(blackberry_bold_touch_ua.is_bot())
+        assertFalse(blackberry_torch_ua.is_bot())
+        assertFalse(blackberry_bold_ua.is_bot())
+        assertFalse(j2me_opera_ua.is_bot())
+        assertFalse(mac_safari_ua.is_bot())
+        assertFalse(windows_ie_ua.is_bot())
+        assertFalse(ubuntu_firefox_ua.is_bot())
+        assertFalse(ie_touch_ua.is_bot())
+        assertFalse(ie_ua.is_bot())
+        assertFalse(nokia_n97_ua.is_bot())
+        assertFalse(android_firefox_aurora_ua.is_bot())
+    }
+
+    @Test
+    fun test_is_email_client() {
+        assertTrue(thunderbird_ua.is_email_client())
+        assertTrue(outlook_ua.is_email_client())
+        assertFalse(playbook_ua.is_email_client())
+        assertFalse(kindle_fire_ua.is_email_client())
+        assertFalse(nexus_7_ua.is_email_client())
+        assertFalse(windows_phone_ua.is_email_client())
+        assertFalse(blackberry_bold_touch_ua.is_email_client())
+        assertFalse(blackberry_torch_ua.is_email_client())
+        assertFalse(blackberry_bold_ua.is_email_client())
+        assertFalse(j2me_opera_ua.is_email_client())
+        assertFalse(mac_safari_ua.is_email_client())
+        assertFalse(windows_ie_ua.is_email_client())
+        assertFalse(ubuntu_firefox_ua.is_email_client())
+        assertFalse(ie_touch_ua.is_email_client())
+        assertFalse(ie_ua.is_email_client())
+        assertFalse(nokia_n97_ua.is_email_client())
+        assertFalse(android_firefox_aurora_ua.is_email_client())
+    }
+
+
+    @Test
+    fun test_strings() {
+        assertEquals(iphone_ua.toString(), "iPhone / iOS 5.1 / Mobile Safari 5.1")
+        assertEquals(ipad_ua.toString(), "iPad / iOS 3.2 / Mobile Safari 4.0.4")
+        assertEquals(galaxy_tab.toString(), "Samsung SCH-I800 / Android 2.2 / Android 2.2")
+        assertEquals(galaxy_s3_ua.toString(), "Samsung GT-I9300 / Android 4.0.4 / Android 4.0.4")
+        assertEquals(kindle_fire_ua.toString(), "Kindle / Android / Amazon Silk 1.1.0-80")
+        assertEquals(playbook_ua.toString(), "BlackBerry Playbook / BlackBerry Tablet OS 2.0.1 / BlackBerry WebKit 2.0.1")
+        assertEquals(nexus_7_ua.toString(), "Asus Nexus 7 / Android 4.1.1 / Chrome 18.0.1025")
+        assertEquals(windows_phone_ua.toString(), "Samsung SGH-i917 / Windows Phone 7.5 / IE Mobile 9.0")
+        assertEquals(windows_rt_ua.toString(), "PC / Windows RT / IE 10.0")
+        assertEquals(blackberry_torch_ua.toString(), "BlackBerry 9800 / BlackBerry OS 6.0.0 / BlackBerry WebKit 6.0.0")
+        assertEquals(blackberry_bold_ua.toString(), "BlackBerry 9700 / BlackBerry OS 5.0.0 / BlackBerry 9700")
+        assertEquals(blackberry_bold_touch_ua.toString(), "BlackBerry 9930 / BlackBerry OS 7.0.0 / BlackBerry WebKit 7.0.0")
+        assertEquals(j2me_opera_ua.toString(), "Generic Feature Phone / Other / Opera Mini 9.80")
+        assertEquals(ie_ua.toString(), "PC / Windows 8 / IE 10.0")
+        assertEquals(ie_touch_ua.toString(), "PC / Windows 8 / IE 10.0")
+        assertEquals(mac_safari_ua.toString(), "PC / Mac OS X 10.6.8 / WebKit Nightly 537.13")
+        assertEquals(windows_ie_ua.toString(), "PC / Windows 7 / IE 9.0")
+        assertEquals(ubuntu_firefox_ua.toString(), "PC / Ubuntu / Firefox 15.0.1")
+        assertEquals(google_bot_ua.toString(), "Spider / Other / Googlebot 2.1")
+        assertEquals(nokia_n97_ua.toString(), "Nokia N97 / Symbian OS 9.4 / Nokia Browser 7.1.12344")
+        assertEquals(android_firefox_aurora_ua.toString(), "Generic Smartphone / Android / Firefox Mobile 27.0")
+    }
 
 }
